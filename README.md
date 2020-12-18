@@ -13,6 +13,7 @@ npm run build
 npm run build --report
 
 • Para correr
+env\Scripts\activate
 npm run start
 
 • (En Dec)
@@ -24,3 +25,13 @@ npm install --save vue-router
 # Crear User.vue
 # Crear UserBalance.vue
 # Editar App.vue
+# Crear server.js
+
+• (En Dec)
+npm install express server-static --save
+
+# Modificar package.jason
+
+• (En Frontend)
+npm run build
+node server.js
