@@ -4,8 +4,7 @@
 # 2.
 # Continuación Dec13
 
-• Instalaciones necesarias (En Dec)
-cd cajero-frontend
+• Instalaciones necesarias (En Frontend)
 npm run dev
 
 • (En Dec)
