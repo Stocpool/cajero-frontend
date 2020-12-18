@@ -20,8 +20,7 @@
           this.username = this.$route.params.username
 
           let self = this
-          axios.get("https://127.0.0.1:800/user/balance/" + this.username)
-              .then((result) => {
+          axios.get("http://127.0.0.1:8000/user/balance/" + this.username).then((result) => {
                   self.balance = result.data.balance
               })
               .catch((error) => {

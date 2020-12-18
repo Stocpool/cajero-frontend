@@ -7,11 +7,10 @@
 <script>
     export default {
         name: "User",
-        data:function(){
-            return {
-                username: "none"
-            }
+        data: function(){
+            return {username: "none"}
         },
+        
         created: function() {
             this.username = this.$route.params.username
         }
