@@ -6,6 +6,9 @@
 
 • Instalaciones necesarias (En Frontend)
 npm run dev
+npm install --save axios
+npm install --save vue-router
+npm install express
 
 • (En Dec)
 npm run build
@@ -15,10 +18,6 @@ npm run build --report
 env\Scripts\activate
 npm run start
 
-• (En Dec)
-npm install --save axios
-npm install --save vue-router
-
 # Crear - router.js -
 # Editar main.js
 # Crear User.vue
@@ -26,7 +25,17 @@ npm install --save vue-router
 # Editar App.vue
 # Crear server.js
 
-• (En Dec)
+# --- Correr el proyecto completo ---
+
+• En el backend correr:
+uvicorn main:api --reload
+• En el front correr:
+npm run start
+• Entrar al puerto 808x (Indicado en terminal)
+
+# -----------------------------------
+
+• (En Front)
 npm install express server-static --save
 
 # Modificar package.jason

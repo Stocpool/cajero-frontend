@@ -1,7 +1,6 @@
 <template>
   <div id="app">
     <div class="header">
-
       <h1>Banco UN</h1>
       <nav>
         <button v-on:click="init" v-if="is_auth" > Inicio </button>
@@ -44,10 +43,11 @@
       getBalance: function(){
         if(this.$route.name != "user_balance"){
           let username = localStorage.getItem("current_username")
-          this.$router.push({name: "user_balance", params:{ username: username }})
+          this.$router.push({ name: "user_balance",
+                              params:{ username: username }
+                              })
         }
       },
-
     },
 
     beforeCreate: function(){
@@ -58,9 +58,6 @@
     }
   }
 </script>
-
-
-
 
 <style>
   body{
