@@ -32,5 +32,6 @@ npm install express server-static --save
 # Modificar package.jason
 
 • (En Frontend)
+npm install express
 npm run build
 node server.js
