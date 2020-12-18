@@ -23,7 +23,13 @@ npm run start
 # Crear User.vue
 # Crear UserBalance.vue
 # Editar App.vue
+
+# -------- Correr en Heroku ---------
+• Subir a Heruku antes de crear server.js y alterar package.json
+# -----------------------------------
+
 # Crear server.js
+# Modificar package.json
 
 # --- Correr el proyecto completo ---
 
@@ -35,12 +41,15 @@ npm run start
 
 # -----------------------------------
 
-• (En Front)
-npm install express server-static --save
-
-# Modificar package.jason
-
 • (En Frontend)
-npm install express
 npm run build
 node server.js
+
+
+
+
+
+
+
+• (En Front)
+npm install express server-static --save
