@@ -10,13 +10,24 @@ npm install --save axios
 npm install --save vue-router
 npm install express
 
-• (En Dec)
+• (En Frontend)
 npm run build
+node server.js
 npm run build --report
 
 • Para correr
 env\Scripts\activate
 npm run start
+
+# --- Correr el proyecto completo ---
+
+• En el backend correr:
+uvicorn main:api --reload
+• En el front correr:
+npm run start
+• Entrar al puerto 808x (Indicado en terminal)
+
+# -----------------------------------
 
 # Crear - router.js -
 # Editar main.js
@@ -31,7 +42,20 @@ npm run start
 # Crear server.js
 # Modificar package.json
 
-# --- Correr el proyecto completo ---
+• Modificar las URL en front t back (Poner las de Heroku)
+• Cargar los repositorios y desplegar Heroku de nuevo
+
+# •••
+# Continúa en el README del backend
+
+# 4.
+-- Dec20
+
+# Crear y modificar UserAuth.vue y UserTransaction.vue
+# Modificar router.js
+# Modificar App.vue
+
+# --- Correr la aplicación completa --
 
 • En el backend correr:
 uvicorn main:api --reload
@@ -40,16 +64,3 @@ npm run start
 • Entrar al puerto 808x (Indicado en terminal)
 
 # -----------------------------------
-
-• (En Frontend)
-npm run build
-node server.js
-
-
-
-
-
-
-
-• (En Front)
-npm install express server-static --save

@@ -41,7 +41,7 @@
     }
     #UserBalance h2{
         font-size: 50px;
-        color: #081d33;
+        color: #214141;
     }
     #UserBalance span{
         color: rgb(131, 44, 4);
