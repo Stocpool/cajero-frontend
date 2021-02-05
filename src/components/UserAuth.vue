@@ -30,9 +30,7 @@ export default {
     methods: {
         processAuthUser: function(){
             var self = this
-            axios.post("https://stocpool-cajero-frontend.herokuapp.com/user/auth/",
-                       "https://stocpool-cajero-backend.herokuapp.com/user/auth/",
-                       "http://localhost:8000/user/auth/",
+            axios.post("http://localhost:8000/user/auth/",
                         self.user_in,  {headers: {}})
                 .then((result) => {
                     alert("Autenticación exitosa");
