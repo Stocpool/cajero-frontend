@@ -1,21 +1,18 @@
 <template>
     <div id="UserTransaction">
         <div class="continer_user_transaction">
-            <h2> Transacción {{username}}</h2>
-
+            <h1> Transacción de {{username}}</h1>
             <form v-on:submit.prevent="processTransaction" >
-                <input type="tetx" v-model="value" placeholder="Valor">
+                <input type="tetx" v-model="value" placeholder="Inserte aquí el valor de la transacción">
                 <br>
-                <button type="submit">Hacer Transacción</button>
+                <button type="submit">Realizar transacción</button>
             </form>
-
         </div>
     </div>
 </template>
 
 
 <script>
-
 import axios from 'axios';
 export default {
     name: "UserTransaction",
@@ -33,13 +30,16 @@ export default {
                 username: this.username,
                 value: this.value
             }
-            axios.put("http://127.0.0.1:8000/user/transaction/", transaction_in,  {headers: {}})
+            axios.put("http://localhost:8000/transaction/",
+                      "https://stocpool-cajero-frontend.herokuapp.com/transaction/",
+                      "https://stocpool-cajero-backend.herokuapp.com/transaction/",
+                      transaction_in,  {headers: {}})
                 .then((result) => {
-                    alert("Transacción correcta, saldo restante: " + result.data.actual_balance);
+                    alert("Transaction Correcta, Saldo Restante: " + result.data.actual_balance);
                     
                 })
                 .catch((error) => {
-                      alert("ERROR Transacción incorrecta: saldo insuficiente");
+                      alert("ERROR Transaction Incorrecta: Saldo Insuficiente");
                 });
         }
     },
@@ -58,63 +58,59 @@ export default {
         padding: 0%;
         height: 100%;
         width: 100%;
-    
+        margin: 0px auto;
         display: flex;
         justify-content: center;
         align-items: center;
-
     }
-
+    /* Marco */
     .continer_user_transaction {
-        border: 3px solid #214141;
+        /* Redondes y color */
+        border: 3px solid  #ffffff;
         border-radius: 10px;
-
-        width: 25%;
-        height: 60%;
-        
+        /* Ancho y alto */
+        width: 35%;
+        height: 52%;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        
     }
-
-    #UserTransaction h2{
-        color: #214141;
-
+    /* Frase "Transacción --- */
+    #UserTransaction h1{
+        color: #e0d7d7;
+        margin: 32px auto;
     }
 
     #UserTransaction form{
-        width: 50%;
-        
+        width: 60%;
     }
 
     #UserTransaction input{
         height: 40px;
         width: 100%;
-
         box-sizing: border-box;
-        padding: 10px 20px;
-        margin: 5px 0;
-
-        border: 1px solid #214141;
-        
+        padding: 10px 30px;
+        margin: 10px 0;
+        border: 1px solid #283747;
     }
+    /* Botón */
     #UserTransaction button{
         width: 100%;
-        height: 40px;
-
+        height: 50px;
+        /* Color relleno */
         color: #E5E7E9;
-        background:#065353;
+        background: #9e0d0d;
         border: 1px solid #E5E7E9;
-
         border-radius: 5px;
         padding: 10px 25px;
-        margin: 5px 0;
+        margin: 10px 0;
     }
 
     #UserTransaction button:hover{
         color: #E5E7E9;
-        background: crimson;
-        border: 1px solid #065353;
+        background: #460505;
+        border: 1px solid #283747;
     }
 </style>

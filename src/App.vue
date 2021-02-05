@@ -1,42 +1,35 @@
 <template>
-  <div id="app" class="app">
-
-    <div class="header">
-
-      <h1>National University Bank</h1>
-      <nav>
-        <button v-on:click="init" v-if="is_auth" > Inicio </button>
-        <button v-on:click="getBalance" v-if="is_auth" > Saldo </button>
-        <button v-on:click="doTransaction" v-if="is_auth" > Transacción </button>
-        <button v-on:click="logOut" v-if="is_auth" >Terminar Sesión</button>
-      </nav>
+  <div class="fondo">
+    <div id="app" class="app">
+      <div class="header">
+        <h1>National University Bank</h1>
+        <nav>
+          <button v-on:click="init" v-if="is_auth" ><font-awesome-icon icon="home"/> Home</button>
+          <button v-on:click="getBalance" v-if="is_auth" ><font-awesome-icon icon="money-bill" class="mr-2"/>Balance</button>
+          <button v-on:click="doTransaction" v-if="is_auth" ><font-awesome-icon icon="credit-card" class="mr-2"/>Transaction</button>
+          <button v-on:click="logOut" v-if="is_auth" ><font-awesome-icon icon="door-open"/>Sign off</button>
+        </nav>
+      </div>
+      <div class="main-component">
+        <router-view  v-on:log-in="logIn" ></router-view>
+      </div>
+      <div class="footer">
+        <h2>
+          &copy; National University Bank 2021
+        </h2>
+      </div>
     </div>
-    
-    <div class="main-component">
-      <router-view  v-on:log-in="logIn" ></router-view>
-    </div>
-
-    <div class="footer">
-      <h2>Misión TIC 2022</h2>
-    </div>
-
-
   </div>
 </template>
 
 
 <script>
-
 import vueRouter from 'vue-router'
-
 export default {
   name: 'App',
-
   data: function(){
       return{ 
         is_auth: localStorage.getItem('isAuth') || false
-      
-       
       }    
   },
 
@@ -89,100 +82,99 @@ export default {
       
         let username = localStorage.getItem("current_username")
         this.$router.push({name: "user_transaction", params:{ username: username }})
-    },
-    
-  
+    }
+  },
 
   created: function(){
     this.$router.push({name: "root"})
     this.updateAuth()
   }
-  
-  }
 }
 </script>
 
+
 <style>
-
-  body{
-    margin: 0 0 0 0;
-  }
-
+  body {
+    margin: 0%;
+}
+/* Encabezado */
   .header{
     margin: 0%;
     padding: 0;
     width: 100%;
-    height: 10vh; 
+    height: 10vh;
     min-height: 100px;
-
-    background-color: #214141 ;
-    color:#E5E7E9  ;
-
+    background-color: #000314c5 ;
+    color:#E5E7E9 ;
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
-
+  /* Distancia entre el borde y el titulo (NU Bank) */
   .header h1{
-    width: 20%;
+    width: 30%;
     text-align: center;
   }
-
   .header nav {
     height: 100%;
-    width: 40%;
-
+    /* Espacio entre botones */
+    width: 45%;
     display: flex;
     justify-content: space-around;
     align-items: center;
-
     font-size: 20px;
   }
-
   .header nav button{
-    color: #E5E7E9;
-    background: #065353;
-    border: 1px solid #E5E7E9;
-
+    /* Color letra de botón; del botón; del borde */
+    color: #fff;
+    display: inline-block;
+    border: 1px solid transparent;
+    line-height: 1.5;
+    margin-top: .25rem;
+    margin-bottom: .25rem;
+    font-weight: 1000;
+    border-radius: 2em;
+    padding: .375rem .75rem;
+    background-color: #000314c5;
+    border-color: #f7f7f7e0;
+    width: 180px;
+    /* Redondes del borde del botón; ancho y alto */
     border-radius: 5px;
     padding: 10px 20px;
   }
-
   .header nav button:hover{
-    color: #214141;
+    color: #700505;
     background: #E5E7E9;
     border: 1px solid #E5E7E9;
   }
-
-  
   .main-component{
     height: 75vh;
     margin: 0%;
     padding: 0%;
-
-    background: #FDFEFE ;
   }
-
- 
   .footer{
     margin: 0;
     padding: 0;
     width: 100%;
     height: 10vh;
-    min-height: 100px; 
-
-    background-color: #214141;
+    min-height: 100px;
+    /* Color parte de abajo; letra de dicha parte */
+    background-color: #000314c5;
     color: #E5E7E9;
-
   }
-
   .footer h2{
     width: 100%;
     height: 100%;
-    
     display: flex;
     justify-content: center;
     align-items: center;
   }
-
+  .fondo{
+    background-image: linear-gradient(rgba(19, 45, 94, 0.65), rgba(80, 34, 13, 0.65)), url('../src/assets/principal.jpg');
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  }
 </style>
